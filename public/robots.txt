@@ -1,0 +1,18 @@
+# Global rules
+User-agent: *
+Allow: /
+Disallow: /*/MediaCoverage
+Disallow: /*/privacypolicy
+Disallow: /*/terms-of-service
+Disallow: /*/blog
+
+# ClaudeBot specific rules
+User-agent: ClaudeBot
+Disallow: /
+
+# Host
+Host: https://blockblastgame.net
+
+# Sitemaps
+Sitemap: https://blockblastgame.net/sitemap.xml
+Sitemap: https://blockblastgame.net/server-sitemap.xml
