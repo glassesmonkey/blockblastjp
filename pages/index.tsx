@@ -210,7 +210,7 @@ const Home: NextPage = () => {
               ) : (
                 <iframe
                   ref={iframeRef}
-                  src="https://blockblastonline.com/game/block-blast-v1/"
+                  src="https://blockblastonline.com/1.embed"
                   width="100%"
                   height="100%"
                   frameBorder="0"
