@@ -233,11 +233,14 @@ const Home: NextPage = () => {
                     {t('gameControls.basicControls.title')}
                   </p>
                   <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-sm sm:text-base text-gray-700">
-                    {(t('gameControls.basicControls.controls', { returnObjects: true }) as Array<{action: string, key: string}>).map((control, index) => (
-                      <li key={index}>
-                        <span className="font-medium">{control.action}:</span> {control.key}
-                      </li>
-                    ))}
+                    {(() => {
+                      const controls = t('gameControls.basicControls.controls', { returnObjects: true });
+                      return Array.isArray(controls) ? controls.map((control: {action: string, key: string}, index: number) => (
+                        <li key={index}>
+                          <span className="font-medium">{control.action}:</span> {control.key}
+                        </li>
+                      )) : null;
+                    })()}
                   </ul>
                 </div>
                 <div className="bg-white rounded-lg p-3 sm:p-4 shadow-sm">
@@ -245,9 +248,12 @@ const Home: NextPage = () => {
                     {t('gameControls.gameplayTips.title')}
                   </p>
                   <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-sm sm:text-base text-gray-700">
-                    {(t('gameControls.gameplayTips.tips', { returnObjects: true }) as string[]).map((tip, index) => (
-                      <li key={index}>{tip}</li>
-                    ))}
+                    {(() => {
+                      const tips = t('gameControls.gameplayTips.tips', { returnObjects: true });
+                      return Array.isArray(tips) ? tips.map((tip: string, index: number) => (
+                        <li key={index}>{tip}</li>
+                      )) : null;
+                    })()}
                   </ul>
                 </div>
               </div>

@@ -48,7 +48,7 @@ const GameGuide = () => {
               {t(`gameGuide.${section}.description`)}
             </p>
             <ul className="space-y-2">
-              {(t(`gameGuide.${section}.tips`, { returnObjects: true }) as string[]).map((tip: string, index: number) => (
+              {(t(`gameGuide.${section}.items`, { returnObjects: true }) as string[]).map((tip: string, index: number) => (
                 <li key={index} className="flex items-start">
                   <span className="mr-2 text-blue-500">•</span>
                   <span className="text-gray-600">{tip}</span>
