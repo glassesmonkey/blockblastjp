@@ -2,7 +2,7 @@ import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { getServerSideTranslations } from '../lib/i18n';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BlogPostList from '../components/BlogPostList';
@@ -59,7 +59,7 @@ export const getServerSideProps: GetServerSideProps<BlogListPageProps> = async (
 
     return {
       props: {
-        ...(await serverSideTranslations(locale || 'en', ['common'])),
+        ...(await getServerSideTranslations(locale || 'en', ['common'])),
         posts: postsResult.posts,
       },
     };

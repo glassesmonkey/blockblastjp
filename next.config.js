@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === 'production';
-const { i18n } = require('./next-i18next.config');
 
 module.exports = {
-  i18n,
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
   reactStrictMode: true,
   transpilePackages: ['@wisp-cms/client'],
   typescript: {

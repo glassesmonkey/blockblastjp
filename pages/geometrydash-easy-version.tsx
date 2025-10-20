@@ -12,7 +12,7 @@ import GameGuide from '../components/GameGuide';
 
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { getServerSideTranslations } from '../lib/i18n';
 import { useState, useRef } from 'react';
 
 
@@ -200,11 +200,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }: GetStaticPropsC
   if (!locale) {
     throw new Error('Locale is not defined');
   }
-  const translations = await serverSideTranslations(locale, ['common']);
+  const translations = await getServerSideTranslations(locale, ['common']);
   console.log('Loaded translations:', translations);
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await getServerSideTranslations(locale, ['common'])),
     },
   };
 };
