@@ -12,7 +12,7 @@ import GameGuide from '../components/GameGuide';
 import BlockBlastSolver from '../components/BlockBlastSolver';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { getServerSideTranslations } from '../lib/i18n';
+import { loadTranslations } from '../lib/loadTranslations';
 import { useState, useRef } from 'react';
 import IntroductionGame from '../components/IntroductionGame';
 
@@ -288,12 +288,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }: GetStaticPropsC
   if (!locale) {
     throw new Error('Locale is not defined');
   }
-  const translations = await getServerSideTranslations(locale, ['common', 'games']);
-  console.log('Loaded translations:', translations);
+
   return {
-    props: {
-      ...(await getServerSideTranslations(locale, ['common', 'games'])),
-    },
+    props: loadTranslations(locale, ['common', 'games']),
   };
 };
 export default Home;

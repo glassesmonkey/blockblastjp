@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useTranslation } from 'next-i18next';
-import { getServerSideTranslations } from '../lib/i18n';
+import { loadTranslations } from '../lib/loadTranslations';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -58,9 +58,7 @@ const TermsOfService: NextPage = () => {
 };
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
-  props: {
-    ...(await getServerSideTranslations(locale, ['common', 'terms'])),
-  },
+  props: loadTranslations(locale, ['common', 'terms']),
 })
 
 export default TermsOfService;

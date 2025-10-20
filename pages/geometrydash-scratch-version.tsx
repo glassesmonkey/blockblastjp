@@ -12,7 +12,7 @@ import GameGuide from '../components/GameGuide-scratch';
 
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { getServerSideTranslations } from '../lib/i18n';
+import { loadTranslations } from '../lib/loadTranslations';
 import { useState, useRef } from 'react';
 
 
@@ -359,12 +359,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }: GetStaticPropsC
   if (!locale) {
     throw new Error('Locale is not defined');
   }
-  const translations = await getServerSideTranslations(locale, ['common-scratch','common']);
-  console.log('Loaded translations:', translations);
+
   return {
-    props: {
-      ...(await getServerSideTranslations(locale, ['common-scratch','common'])),
-    },
+    props: loadTranslations(locale, ['common-scratch', 'common']),
   };
 };
 export default Home;
