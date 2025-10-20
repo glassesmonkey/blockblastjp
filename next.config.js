@@ -3,8 +3,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ja',
+    locales: ['ja'],
   },
   reactStrictMode: true,
   transpilePackages: ['@wisp-cms/client'],

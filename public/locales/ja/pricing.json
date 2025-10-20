@@ -1,39 +1,36 @@
 {
-  "meta": {
-    "title": "料金プラン - サービス名",
-    "description": "あなたのニーズに合った最適なプランをお選びください"
-  },
-  "title": "シンプルで固定の料金プラン",
-  "description": "シンプルで固定の料金プラン。",
-  "oneTimePurchase": "一回限りの購入",
-  "subscription": "サブスクリプション",
-  "forCredits": "{{credits}}クレジット分",
-  "pricePerCredit": "1クレジットあたり{{price}}円",
-  "buyNow": "今すぐ購入",
-  "subscribe": "サブスクリプション申込",
-  "perMonth": "月額",
-  "oneTime": "一回限り",
-  "popular": "人気",
-  "plans": {
-    "One-Time": {
-      "name": "一回限りの購入"
+    "meta": {
+      "title": "料金プラン - あなたのサービス名",
+      "description": "ニーズに合った最適なプランを選択してください"
     },
-    "Basic": {
-      "name": "ベーシックプラン"
+    "title": "シンプルで明確な料金設定",
+    "description": "ニーズに合ったプランを選択してください。",
+    "subscription": "サブスクリプション",
+    "forCredits": "{{credits}}クレジット",
+    "pricePerCredit": "クレジット単価: ${{price}}",
+    "subscribe": "登録する",
+    "perMonth": "月",
+    "popular": "最も人気",
+    "plans": {
+      "Base": {
+        "name": "ベースプラン"
+      },
+      "Plus": {
+        "name": "プラスプラン"
+      },
+      "Advanced": {
+        "name": "アドバンスドプラン"
+      },
+      "Enterprise": {
+        "name": "エンタープライズプラン"
+      }
     },
-    "Plus": {
-      "name": "プラスプラン"
+    "sellingPoints": {
+      "fullAccessToModels": "すべてのモデルへのフルアクセス",
+      "savePrivateImages": "プライベート画像の保存",
+      "removeWatermark": "透かしの削除",
+      "pricePerImage": "画像単価: ${{price}}"
     },
-    "Pro": {
-      "name": "プロプラン"
-    }
-  },
-  "sellingPoints": {
-    "noWatermark": "ウォーターマークなし",
-    "oneVideoPerCredit": "1クレジット = 1動画生成",
-    "downloadVideo": "動画ダウンロード",
-    "privateGenerations": "プライベート生成"
-  },
-  "subscriptionRecommendation": "複数のプランに同時に登録でき、簡単にサブスクリプションを管理できるため、サブスクリプションをお勧めします。",
-  "viewBillingPage": "請求ページを表示"
-}
+    "subscriptionRecommendation": "ニーズに最適なプランを選択してください。すべてのプランには、すべての機能へのフルアクセスが含まれます。",
+    "viewBillingPage": "お支払いページを表示"
+  }

@@ -2,8 +2,8 @@ const path = require('path');
 
 const config = {
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ja',
+    locales: ['ja'],
   },
   defaultNS: 'common',
   localePath: typeof window === 'undefined'

@@ -1,0 +1,111 @@
+{
+  "recommendations": {
+    "title": "おすすめゲーム",
+    "games": [
+      {
+        "id": "6",
+        "title": "コアボール ゲーム",
+        "description": "コア ボール ゲーム",
+        "image": "https://cdn.geometrydashjp.com/ding.png",
+        "url": "https://coreballjp.com",
+        "isExternal": true
+      },
+      {
+        "id": "2048-cupcakes",
+        "title": "2048 カップケーキ",
+        "description": "最も人気のある2048パズルゲーム",
+        "image": "https://cdn.2048-cupcakes.online/66b7c398c3d38a001ed2a2d2.webp",
+        "url": "https://2048-cupcakes.online/",
+        "isExternal": false
+      },      {
+        "id": "ballkorokoro",
+        "title": "ボール コロコロ 2",
+        "image": "https://cdn.ballkorokoro.com/ballkorokoro/135727357_480x360.png",
+        "description": "シンプルで奥深いボール転がしゲーム。障害物を避けてボールを目標地点まで転がそう!",
+        "url": "https://ballkorokoro.com",
+        "isExternal": true
+      },
+      {
+        "id": "sprunked",
+        "title": "スプランクド",
+        "description": "最も人気のあるスプランクドゲーム",
+        "image": "https://cdn.sprunked.cloud/1092260342_480x360.webp",
+        "url": "https://sprunked.cloud/",
+        "isExternal": false
+      },
+      {
+        "id": "run3",
+        "title": "ラン 3",
+        "description": "エキサイティングなラン3ゲームをプレイ",
+        "image": "https://cdn.run3.fun/run3/run3.webp",
+        "url": "https://run3.fun",
+        "isExternal": true
+      },
+      {
+        "id": "rice-purity-test",
+        "title": "ライス ピュリティ テスト",
+        "description": "最も人気のあるライスピュリティテストゲーム",
+        "image": "https://cdn.rice-purity-test.org/shares/1732843669886-rice-purity-score.png",
+        "url": "https://rice-purity-test.org/",
+        "isExternal": true
+      },
+      {
+        "id": "tiny-fishing",
+        "title": "タイニー フィッシング",
+        "description": "リラックスできるタイニーフィッシングゲームを楽しもう",
+        "image": "https://cdn.tiny-fishing.online/tinyfish/tinyfish.webp",
+        "url": "https://tiny-fishing.online",
+        "isExternal": true
+      },
+      {
+        "id": "chill-guy-clicker",
+        "title": "チル ガイ クリッカー",
+        "description": "エキサイティングなチルガイクリッカーゲームをプレイ",
+        "image": "https://cdn.chill-guy-clicker.com/chillguyclicker/chill-guy-clicker-banner.jpg",
+        "url": "https://chill-guy-clicker.com",
+        "isExternal": true
+      },
+      {
+        "id": "granny",
+        "title": "グラニー",
+        "description": "リラックスできるグラニーゲームを楽しもう",
+        "image": "https://cdn.grannyonline.net/granny/granny.webp",
+        "url": "https://grannyonline.net",
+        "isExternal": true
+      },
+      {
+        "id": "funny-jokes",
+        "title": "ファニー ジョーク",
+        "description": "楽しいジョークを楽しもう",
+        "image": "https://cdn.funny-jokes.co/jokeslogo.webp",
+        "url": "https://funny-jokes.co",
+        "isExternal": true
+      },
+      {
+        "id": "miner-cat",
+        "title": "マイナーキャット",
+        "image": "https://cdn.scracraft.com/scrachminecraft/2-337720692_480x360.webp",
+        "description": "ブロックを壊し、鉱石を集め、最強のピッケルを作ろう!",
+
+        "url": "http://scracraft.com/game-list/miner-cat",
+        "isExternal": true
+      },
+      {
+        "id": "catmeme",
+        "title": "キャット ミーム",
+        "description": "リラックスできるキャットミームゲームを楽しもう",
+        "image": "https://media.tenor.com/gRcOi64o3oAAAAAM/crunchycat-luna.gif",
+        "url": "https://catmeme.org",
+        "isExternal": true
+      },
+      {
+        "id": "block-blast",
+        "title": "ブロック ブラスト",
+        "description": "ウェブサイトでブロック ブラストをプレイ",
+        "image": "https://cdn.blockblastgame.net/com.block.blast.adventure.blockpuzzle.freegame.master-53592a17-3d3e-48b7-aae9-0ebfe4d891c9.webp",
+        "url": "https://blockblastgame.net/",
+        "isExternal": false
+      }
+    ]
+  }
+}

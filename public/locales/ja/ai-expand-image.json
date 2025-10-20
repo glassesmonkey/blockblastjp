@@ -1,0 +1,103 @@
+{
+    "meta": {
+      "title": "AI画像拡張 | あらゆるプラットフォーム対応の画像拡張ツール"
+    },
+    "header": {
+      "buyCredits": "クレジットを購入",
+      "signUpPromo": "🎁 今すぐ登録して5クレジット無料!",
+      "signInWithGoogle": "Googleでサインイン"
+    },
+    "dragDropUpload": {
+      "dragDropText": "画像をここにドラッグ&ドロップ",
+      "orClickText": "またはクリックしてファイルを選択",
+      "supportedFormats": "対応形式: JPG、JPEG、SVG、PNG、GIF、WEBP",
+      "maxFileSize": "最大ファイルサイズ: 25MB",
+      "fileTooLarge": "ファイルが大きすぎます。最大サイズは25MBです。"
+    },
+    "modeSwitcher": {
+      "speedMode": "スピードモード",
+      "highQualityMode": "高品質モード",
+      "speedModeDescription": "スピードモード: 高速処理(通常1分以内)ですが、高品質モードと比較して画質は低くなります。",
+      "highQualityModeDescription": "高品質モード: 画像生成には約2分かかりますが、より高品質な結果が得られます。"
+    },
+    "templateSelection": {
+      "label": "テンプレート",
+      "description": "希望する画像比率または用途を選択してください。"
+    },
+    "imagePosition": {
+      "label": "画像の配置",
+      "description": "拡張されたキャンバス内で元の画像を配置する位置を選択してください"
+    },
+    "prompt": {
+      "label": "プロンプト(オプション)",
+      "description": "AI拡張のための画像内容を説明します。空白の場合は自動分析されます。",
+      "placeholder": "プロンプトを入力"
+    },
+    "amount": {
+      "label": "生成数",
+      "description": "生成する拡張画像の数を選択してください"
+    },
+    "credits": {
+      "label": "残りクレジット"
+    },
+    "extendImage": {
+      "buttonText": "画像を拡張!",
+      "loading": "読み込み中..."
+    },
+    "errorToast": {
+      "defaultError": "問題が発生しました。もう一度お試しください。"
+    },
+    "rechargeModal": {
+      "title": "クレジット不足",
+      "message": "この操作を実行するのに十分なクレジットがありません。チャージしますか?",
+      "rechargeButton": "チャージ",
+      "cancelButton": "キャンセル"
+    },
+    "loadingOverlay": {
+      "enhancingImage": "画像を強化中...",
+      "uploadingImage": "画像をアップロード中...",
+      "aiRecognizing": "AIが画像を認識中...",
+      "expandingImage": "画像を拡張中",
+      "processingResults": "結果を処理中",
+      "completed": "完了",
+      "highQualityModeMessage": "高品質モードでは約2分かかります。タブを閉じたり更新したりしても大丈夫です - 画像は生成され続け、完成後に「生成された画像」に表示されます。何か問題が発生した場合、クレジットは返却されますのでご安心ください。",
+      "complete": "完了",
+      "warning": "このページを閉じないでください。閉じると結果の生成に影響する可能性があります。"
+    },
+    "expandedImagesGallery": {
+      "title": "生成された画像"
+    },
+    "improvedCanvas": {
+      "proTip": "💡 プロのヒント: 最高の拡張結果を得るには、スライダーを100%に設定することをお勧めします!"
+    },
+    "userDropdownMenu": {
+      "credits": "クレジット",
+      "loading": "読み込み中...",
+      "logout": "ログアウト"
+    },
+    "templates": {
+        "9x16Portrait": "9:16 縦長",
+        "16x9Landscape": "16:9 横長",
+        "1x1Square": "1:1 正方形",
+        "InstagramPost": "Instagram投稿",
+        "InstagramPortrait": "Instagram縦長",
+        "InstagramStory": "Instagramストーリー",
+        "YouTubeThumbnail": "YouTubeサムネイル",
+        "FacebookPost": "Facebook投稿",
+        "FacebookCover": "Facebookカバー",
+        "PinterestPin": "Pinterestピン",
+        "XPost": "X(旧Twitter)投稿",
+        "XCover": "X(旧Twitter)カバー",
+        "TikTokVideoPortrait": "TikTok動画カバー(縦長)",
+        "TikTokVideoLandscape": "TikTok動画カバー(横長)"
+      },
+      "imagePositionselect": {
+        "options": {
+          "center": "中央",
+          "topLeft": "左上",
+          "topRight": "右上",
+          "bottomLeft": "左下",
+          "bottomRight": "右下"
+        }
+      }
+  }
