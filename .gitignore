@@ -30,7 +30,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-tsconfig.server.json 
+tsconfig.server.json
 
 # vercel
 .vercel
@@ -41,4 +41,12 @@ next-env.d.ts
 .env
 .vscode
 server.ts
+
+# pnpm
+.pnpm-store
+
+# cloudflare
+.open-next/
+.wrangler/
+cloudflare-env.d.ts
 

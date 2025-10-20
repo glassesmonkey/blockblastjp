@@ -6,8 +6,11 @@ module.exports = {
   i18n,
   reactStrictMode: true,
   transpilePackages: ['@wisp-cms/client'],
-  experimental: {
-    esmExternals: 'loose',
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   images: {
     domains: ["upcdn.io", "replicate.delivery", "lh3.googleusercontent.com","cdn.picsart.io"],

@@ -628,11 +628,10 @@ const BlockBlastSolver: React.FC = () => {
         )}
         <div className="w-full max-w-[400px] mx-auto">
           <div className="grid grid-cols-8 gap-[2px] bg-gray-100 p-2 rounded">
-            {mainBoard.map((row, i) => (
-              <React.Fragment key={i}>
-                {row.map((cell, j) => (
-                  <div
-                    key={`${i}-${j}`}
+            {mainBoard.flatMap((row, i) =>
+              row.map((cell, j) => (
+                <div
+                  key={`${i}-${j}`}
                     className={`w-full aspect-square border ${
                       cell ? 'bg-green-500' : 'bg-white'
                     } cursor-pointer select-none`}
@@ -657,9 +656,8 @@ const BlockBlastSolver: React.FC = () => {
                     onTouchEnd={handleDragEnd}
                     data-pos={`${i}-${j}`}
                   />
-                ))}
-              </React.Fragment>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>
@@ -681,17 +679,31 @@ const BlockBlastSolver: React.FC = () => {
               onClick={() => setSelectedFigureIndex(index)}
             >
               <div className="grid grid-cols-5 gap-0.5 bg-gray-100 p-1 rounded">
-                {figure.map((row, i) => (
-                  <React.Fragment key={i}>
-                    {row.map((cell, j) => (
-                      <div
-                        key={`${i}-${j}`}
-                        className={`w-5 sm:w-6 aspect-square border ${
-                          cell ? figureColors[index] : 'bg-white'
-                        } cursor-pointer select-none`}
-                        onMouseDown={(e) => {
+                {figure.flatMap((row, i) =>
+                  row.map((cell, j) => (
+                    <div
+                      key={`${i}-${j}`}
+                      className={`w-5 sm:w-6 aspect-square border ${
+                        cell ? figureColors[index] : 'bg-white'
+                      } cursor-pointer select-none`}
+                      onMouseDown={(e) => {
+                        e.stopPropagation();
+                        handleDragStart(
+                          figures[index],
+                          (newBoard) => {
+                            const newFigures = [...figures];
+                            newFigures[index] = newBoard;
+                            setFigures(newFigures);
+                          },
+                          i,
+                          j,
+                          e
+                        );
+                      }}
+                      onMouseEnter={(e) => {
+                        if (isDragging) {
                           e.stopPropagation();
-                          handleDragStart(
+                          handleDragOver(
                             figures[index],
                             (newBoard) => {
                               const newFigures = [...figures];
@@ -702,67 +714,51 @@ const BlockBlastSolver: React.FC = () => {
                             j,
                             e
                           );
-                        }}
-                        onMouseEnter={(e) => {
-                          if (isDragging) {
-                            e.stopPropagation();
-                            handleDragOver(
-                              figures[index],
-                              (newBoard) => {
-                                const newFigures = [...figures];
-                                newFigures[index] = newBoard;
-                                setFigures(newFigures);
-                              },
-                              i,
-                              j,
-                              e
-                            );
-                          }
-                        }}
-                        onTouchStart={(e) => {
+                        }
+                      }}
+                      onTouchStart={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        handleDragStart(
+                          figures[index],
+                          (newBoard) => {
+                            const newFigures = [...figures];
+                            newFigures[index] = newBoard;
+                            setFigures(newFigures);
+                          },
+                          i,
+                          j,
+                          e as unknown as React.MouseEvent
+                        );
+                      }}
+                      onTouchMove={(e) => {
+                        if (isDragging) {
                           e.stopPropagation();
                           e.preventDefault();
-                          handleDragStart(
-                            figures[index],
-                            (newBoard) => {
-                              const newFigures = [...figures];
-                              newFigures[index] = newBoard;
-                              setFigures(newFigures);
-                            },
-                            i,
-                            j,
-                            e as unknown as React.MouseEvent
-                          );
-                        }}
-                        onTouchMove={(e) => {
-                          if (isDragging) {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            const touch = e.touches[0];
-                            const element = document.elementFromPoint(touch.clientX, touch.clientY);
-                            if (element) {
-                              const [row, col] = element.getAttribute('data-pos')?.split('-').map(Number) || [-1, -1];
-                              if (row !== -1 && col !== -1) {
-                                handleDragOver(
-                                  figures[index],
-                                  (newBoard) => {
-                                    const newFigures = [...figures];
-                                    newFigures[index] = newBoard;
-                                    setFigures(newFigures);
-                                  },
-                                  row,
-                                  col,
-                                  e as unknown as React.MouseEvent
-                                );
-                              }
+                          const touch = e.touches[0];
+                          const element = document.elementFromPoint(touch.clientX, touch.clientY);
+                          if (element) {
+                            const [row, col] = element.getAttribute('data-pos')?.split('-').map(Number) || [-1, -1];
+                            if (row !== -1 && col !== -1) {
+                              handleDragOver(
+                                figures[index],
+                                (newBoard) => {
+                                  const newFigures = [...figures];
+                                  newFigures[index] = newBoard;
+                                  setFigures(newFigures);
+                                },
+                                row,
+                                col,
+                                e as unknown as React.MouseEvent
+                              );
                             }
                           }
-                        }}
-                        data-pos={`${i}-${j}`}
-                      />
-                    ))}
-                  </React.Fragment>
-                ))}
+                        }
+                      }}
+                      data-pos={`${i}-${j}`}
+                    />
+                  ))
+                )}
               </div>
             </div>
           ))}
@@ -828,34 +824,32 @@ const BlockBlastSolver: React.FC = () => {
                 </div>
                 <div className="border rounded-lg p-4 bg-white w-full">
                   <div className="grid grid-cols-8 gap-1 bg-gray-100 p-2">
-                    {step.resultBoard.map((row, i) => (
-                      <React.Fragment key={i}>
-                        {row.map((cell, j) => {
-                          const source = step.sourceMap[i][j];
-                          const isClearing = 
-                            (step.clearedLines.rows.includes(i) || 
-                             step.clearedLines.cols.includes(j));
-                          const shouldShowCell = cell === 1 || isClearing;
+                    {step.resultBoard.flatMap((row, i) =>
+                      row.map((cell, j) => {
+                        const source = step.sourceMap[i][j];
+                        const isClearing =
+                          (step.clearedLines.rows.includes(i) ||
+                           step.clearedLines.cols.includes(j));
+                        const shouldShowCell = cell === 1 || isClearing;
 
-                          return (
-                            <div
-                              key={`${i}-${j}`}
-                              className={`
-                                w-full aspect-square border
-                                ${shouldShowCell ? (
-                                  `${source === -1 ? 'bg-green-500' : figureColors[source]}
-                                   ${isClearing ? 'clearing-cell clearing-cell-enter' : ''}`
-                                ) : 'bg-white'}
-                                transition-all duration-300
-                              `}
-                              style={{
-                                animationDelay: isClearing ? `${(i + j) * 50}ms` : '0ms'
-                              }}
-                            />
-                          );
-                        })}
-                      </React.Fragment>
-                    ))}
+                        return (
+                          <div
+                            key={`${i}-${j}`}
+                            className={`
+                              w-full aspect-square border
+                              ${shouldShowCell ? (
+                                `${source === -1 ? 'bg-green-500' : figureColors[source]}
+                                 ${isClearing ? 'clearing-cell clearing-cell-enter' : ''}`
+                              ) : 'bg-white'}
+                              transition-all duration-300
+                            `}
+                            style={{
+                              animationDelay: isClearing ? `${(i + j) * 50}ms` : '0ms'
+                            }}
+                          />
+                        );
+                      })
+                    )}
                   </div>
                 </div>
               </div>

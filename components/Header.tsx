@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { signIn, signOut, useSession } from 'next-auth/react';
-import { ChevronDown, Globe, LogOut, User, Menu, X, CreditCard } from 'lucide-react';
+import { ChevronDown, Globe, Menu, X } from 'lucide-react';
 
 interface Language {
   code: string;
@@ -13,35 +12,11 @@ interface Language {
 }
 
 export default function Header() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const [userCredits, setUserCredits] = useState<number | null>(null);
   const router = useRouter();
   const { t } = useTranslation('common');
-  const { data: session, status } = useSession();
 
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-
-  useEffect(() => {
-    const fetchCredits = async () => {
-      if (session?.user) {
-        try {
-          const response = await fetch('/api/credits');
-          if (response.ok) {
-            const data = await response.json();
-            setUserCredits(data.credits);
-          } else {
-            console.error('Failed to fetch user credits');
-          }
-        } catch (error) {
-          console.error('Error fetching user credits:', error);
-        }
-      }
-    };
-
-    fetchCredits();
-  }, [session]);
 
   const languages: Language[] = [
      { code: 'en', name: 'English', shortName: 'EN' },

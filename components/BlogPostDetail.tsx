@@ -8,6 +8,20 @@ interface BlogPostDetailProps {
 }
 
 const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
+  const proseClasses = [
+    'prose prose-lg max-w-none',
+    'prose-headings:font-bold prose-headings:text-gray-900',
+    'prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4',
+    'prose-h3:text-2xl prose-h3:mt-6 prose-h3:mb-3',
+    'prose-p:text-gray-800 prose-p:leading-relaxed',
+    'prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline',
+    'prose-strong:font-semibold prose-strong:text-gray-900',
+    'prose-ul:list-disc prose-ul:pl-5',
+    'prose-ol:list-decimal prose-ol:pl-5',
+    'prose-li:my-2',
+    'prose-img:rounded-lg prose-img:shadow-md'
+  ].join(' ');
+
   return (
     <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <header className="mb-8">
@@ -28,18 +42,8 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
         </div>
       </header>
 
-      <div 
-        className="prose prose-lg max-w-none
-                   prose-headings:font-bold prose-headings:text-gray-900
-                   prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4
-                   prose-h3:text-2xl prose-h3:mt-6 prose-h3:mb-3
-                   prose-p:text-gray-800 prose-p:leading-relaxed
-                   prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-                   prose-strong:font-semibold prose-strong:text-gray-900
-                   prose-ul:list-disc prose-ul:pl-5
-                   prose-ol:list-decimal prose-ol:pl-5
-                   prose-li:my-2
-                   prose-img:rounded-lg prose-img:shadow-md"
+      <div
+        className={proseClasses}
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
