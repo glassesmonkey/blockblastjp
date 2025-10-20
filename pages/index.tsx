@@ -32,6 +32,7 @@ const Home: NextPage = () => {
       <Head>
 
         <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
         <link rel="canonical" href={canonicalUrl} />
         {/* <link rel="dns-prefetch" href="https://nos.blockblastgame.net"></link> */}
 
@@ -55,11 +56,11 @@ const Home: NextPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "VideoGame",
-            "name": "Block Blast",
+            "name": t('meta.ogTitle'),
             "applicationCategory": "Game",
             "operatingSystem": "Any",
-            "description": "Block Blast is a free online puzzle game where you match and clear blocks to score points. With multiple game modes, offline play capability, and daily challenges, Block Blast offers endless puzzle fun for players of all ages.",
-            "url": "https://blockblastgame.net",
+            "description": t('meta.description'),
+            "url": canonicalUrl,
             "sameAs": [
               "https://www.tiktok.com/@blockblastofficial",
               "https://x.com/BlockBlastSquad",
@@ -94,7 +95,7 @@ const Home: NextPage = () => {
               "name": "Block Blast Games"
             },
             "datePublished": "2024-01-01",
-            "inLanguage": ["en", "ja", "ko", "fr", "it"],
+            "inLanguage": locale || "ja",
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.8",
@@ -105,13 +106,13 @@ const Home: NextPage = () => {
                 "@type": "Review",
                 "author": {
                   "@type": "Person",
-                  "name": "Emma S."
+                  "name": t('testimonials.player1.name')
                 },
                 "reviewRating": {
                   "@type": "Rating",
                   "ratingValue": "5"
                 },
-                "reviewBody": "Block Blast is my favorite puzzle game! The gameplay is smooth, and I love how I can play it anywhere without internet. Perfect for quick gaming sessions!"
+                "reviewBody": t('testimonials.player1.content')
               }
             ],
             "gamePlatform": ["Web Browser", "Online", "Mobile"],
@@ -132,50 +133,50 @@ const Home: NextPage = () => {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "What is Block Blast?",
+                "name": t('faq.whatIs.question'),
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Block Blast is a free online puzzle game where you match and clear blocks to score points. It features multiple game modes, including Classic Mode and Adventure Mode, and can be played directly in your web browser without any downloads."
+                  "text": t('faq.whatIs.answer')
                 }
               },
               {
                 "@type": "Question",
-                "name": "How do you play Block Blast?",
+                "name": t('faq.howToPlay.question'),
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Playing Block Blast is simple! Drag and drop blocks onto the grid, and try to fill complete rows or columns to clear them. The more lines you clear at once, the more points you earn. The game continues until there's no more space to place new blocks."
+                  "text": t('faq.howToPlay.answer')
                 }
               },
               {
                 "@type": "Question",
-                "name": "Can I play Block Blast offline?",
+                "name": t('faq.offline.question'),
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes! Block Blast can be played offline once you've loaded the game. No internet connection is needed for basic gameplay, making it perfect for playing on the go or when WiFi isn't available."
+                  "text": t('faq.offline.answer')
                 }
               },
               {
                 "@type": "Question",
-                "name": "What game modes are available in Block Blast?",
+                "name": t('faq.gameModes.question'),
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Block Blast offers two main game modes: Classic Mode, where you match blocks to score points, and Adventure Mode, where you explore different levels while solving puzzles. There are also daily challenges for extra fun and rewards."
+                  "text": t('faq.gameModes.answer')
                 }
               },
               {
                 "@type": "Question",
-                "name": "Is Block Blast suitable for children?",
+                "name": t('faq.highScore.question'),
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes! Block Blast is family-friendly and suitable for all ages. It's easy to learn but offers enough challenge to keep players engaged. The game helps develop problem-solving skills and strategic thinking in a fun way."
+                  "text": t('faq.highScore.answer')
                 }
               },
               {
                 "@type": "Question",
-                "name": "How do I get a high score in Block Blast?",
+                "name": t('faq.rewards.question'),
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "To achieve high scores in Block Blast, try to clear multiple rows or columns at once for bonus points. Plan your moves ahead, keep the board clear, and look for opportunities to create big combinations. Practice and strategy are key to improving your score!"
+                  "text": t('faq.rewards.answer')
                 }
               }
             ]
@@ -189,9 +190,10 @@ const Home: NextPage = () => {
       <div className='w-full flex flex-col items-center mt-4 sm:mt-10'>
         <div className='w-full flex flex-col lg:flex-row lg:space-x-6 max-w-[1100px]'>
           {/* 游戏主区域 */}
-          <div className='flex-1'>
-            <div 
-              className='relative w-full h-[320px] sm:h-[573px] border border-gray-300 rounded-lg shadow-lg overflow-hidden'
+          <div className='flex-1 flex flex-col'>
+            {/* 游戏iframe区域 - order-1确保视觉上在顶部 */}
+            <div
+              className='relative w-full h-[320px] sm:h-[573px] border border-gray-300 rounded-lg shadow-lg overflow-hidden order-1'
               onClick={() => setShowGame(true)}
             >
               {!showGame ? (
@@ -222,8 +224,13 @@ const Home: NextPage = () => {
               )}
             </div>
 
+            {/* H1标签 - order-2确保在HTML中靠前但视觉上在游戏后 */}
+            <h1 className="order-2 text-3xl sm:text-4xl font-bold text-center mt-6 mb-4 text-indigo-700">
+              ブロック ブラスト
+            </h1>
+
             {/* 游戏控制说明 */}
-            <div className="mt-4 w-full bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg shadow-md p-4 sm:p-6">
+            <div className="order-3 mt-4 w-full bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg shadow-md p-4 sm:p-6">
               <p className="text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 text-indigo-700">
                 {t('gameControls.title')}
               </p>
