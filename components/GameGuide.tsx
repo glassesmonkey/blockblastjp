@@ -26,7 +26,7 @@ const GameGuide = () => {
   };
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+    <section id="guide" className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
       <div className="mx-auto mb-8 max-w-3xl text-center md:mb-12 lg:mb-16">
         <h2 className="mb-4 text-3xl font-bold md:text-5xl">
           {t('gameGuide.title')}

@@ -11,8 +11,8 @@ User-agent: ClaudeBot
 Disallow: /
 
 # Host
-Host: https://blockblastgame.net
+Host: https://blockblastjp.com
 
 # Sitemaps
-Sitemap: https://blockblastgame.net/sitemap.xml
-Sitemap: https://blockblastgame.net/server-sitemap.xml
+Sitemap: https://blockblastjp.com/sitemap.xml
+Sitemap: https://blockblastjp.com/server-sitemap.xml

@@ -15,13 +15,14 @@ import { useTranslation } from 'next-i18next';
 import { loadTranslations } from '../lib/loadTranslations';
 import { useState, useRef } from 'react';
 import IntroductionGame from '../components/IntroductionGame';
+import QuickNavigation from '../components/QuickNavigation';
 
 
 const Home: NextPage = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
   const { locale, locales, defaultLocale, pathname } = router;
-  const canonicalUrl = `https://blockblastgame.net${locale === defaultLocale ? '' : `/${locale}`}${pathname}`;
+  const canonicalUrl = `https://blockblastjp.com${locale === defaultLocale ? '' : `/${locale}`}${pathname}`;
   const [showGame, setShowGame] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
@@ -34,7 +35,7 @@ const Home: NextPage = () => {
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
         <link rel="canonical" href={canonicalUrl} />
-        {/* <link rel="dns-prefetch" href="https://nos.blockblastgame.net"></link> */}
+        {/* <link rel="dns-prefetch" href="https://nos.blockblastjp.com"></link> */}
 
         {/* hreflang 标记 */}
         {locales?.map((l) => (
@@ -42,7 +43,7 @@ const Home: NextPage = () => {
             key={l}
             rel="alternate"
             hrefLang={l}
-            href={`https://blockblastgame.net${l === defaultLocale ? '' : `/${l}`}${pathname}`}
+            href={`https://blockblastjp.com${l === defaultLocale ? '' : `/${l}`}${pathname}`}
           />
         ))}
 
@@ -50,7 +51,7 @@ const Home: NextPage = () => {
         <link
           rel="alternate"
           hrefLang="x-default"
-          href={`https://blockblastgame.net${pathname}`}
+          href={`https://blockblastjp.com${pathname}`}
         />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -185,6 +186,7 @@ const Home: NextPage = () => {
 
       </Head>
       <Header />
+      <QuickNavigation />
 
       {/* 修改游戏区域的布局为flex容器 */}
       <div className='w-full flex flex-col items-center mt-4 sm:mt-10'>
@@ -199,8 +201,8 @@ const Home: NextPage = () => {
               {!showGame ? (
                 <div className='absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 cursor-pointer'>
                   <img
-                    src="https://cdn.blockblastgame.net/block-blast-banner.webp"
-                    alt="block-blast-banner"
+                    src="https://cdn.blockblastjp.com/block-blast-banner.webp"
+                    alt={t('banner.alt')}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <button

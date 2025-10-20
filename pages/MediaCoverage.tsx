@@ -16,7 +16,7 @@ const MediaCoverage: NextPage = () => {
  { title: "lost-ark-patch-notes-for-may-include-new-raids-and-more?page=2&list=138&sort=recent", url: "https://www.invenglobal.com/forum/lostark/140-general-discussion/9407-lost-ark-patch-notes-for-may-include-new-raids-and-more?page=2&list=138&sort=recent" },
  { title: "how-to-find-a-wps-pin-on-hp-deskjet-2600/page12#post111483", url: "https://forums.valofe.com/forum/black-squad-tw/%E6%96%B0%E5%85%AC%E5%91%8A-aa/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C-aa/73927-how-to-find-a-wps-pin-on-hp-deskjet-2600/page12#post111483" },
  { title: "iroiro400.sakura.ne.jp/400BBS/pwebboard.php/nfJfdqijiKo", url: "https://iroiro400.sakura.ne.jp/400BBS/pwebboard.php/nfJfdqijiKo" },
- { title: "sitelike.org", url: "https://www.sitelike.org/similar/blockblastgame.net/" },
+ { title: "sitelike.org", url: "https://www.sitelike.org/similar/blockblastjp.com/" },
  { title: "telegra.ph", url: "https://telegra.ph/Block-Blast-11-01" },
  { title: "contemporaryarts.mit.edu", url: "https://contemporaryarts.mit.edu/pub/dancing-with-interactive-space/release/6" },
  { title: "designjustice.mitpress.mit.edu", url: "https://designjustice.mitpress.mit.edu/pub/q0ep9grh/release/1?breakCache=1730099567?breakCache=1730455502" },

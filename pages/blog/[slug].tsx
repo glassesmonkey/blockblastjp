@@ -14,7 +14,7 @@ const BlogPostPage: NextPage<PostDetailPageData> = ({ post, relatedPosts, cta })
   const { t } = useTranslation('common');
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  const canonicalUrl = `https://blockblastgame.net/${locale === defaultLocale ? '' : `/${locale}`}/blog/${post.slug}`;
+  const canonicalUrl = `https://blockblastjp.com/${locale === defaultLocale ? '' : `/${locale}`}/blog/${post.slug}`;
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -31,7 +31,7 @@ const BlogPostPage: NextPage<PostDetailPageData> = ({ post, relatedPosts, cta })
             key={l}
             rel="alternate"
             hrefLang={l}
-            href={`https://blockblastgame.net/${l === defaultLocale ? '' : `/${l}`}/blog/${post.slug}`}
+            href={`https://blockblastjp.com/${l === defaultLocale ? '' : `/${l}`}/blog/${post.slug}`}
           />
         ))}
         <link rel="alternate" hrefLang="x-default" href={`https://ai-hug.org/blog/${post.slug}`} />

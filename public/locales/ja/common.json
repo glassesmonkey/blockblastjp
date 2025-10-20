@@ -1,7 +1,21 @@
 {
   "header": {
     "headerh2": "ブロック ブラスト",
-    "home": "ホーム"
+    "home": "ホーム",
+    "logo": {
+      "alt": "ブロック ブラスト ロゴ"
+    }
+  },
+  "nav": {
+    "quickNav": "クイックナビゲーション",
+    "introduction": "はじめに",
+    "features": "特徴",
+    "howItWorks": "遊び方",
+    "tips": "攻略のコツ",
+    "faq": "よくある質問",
+    "testimonials": "プレイヤーの声",
+    "guide": "ゲームガイド",
+    "scrollToTop": "クリックでトップに戻る"
   },
   "meta": {
     "title": "ブロック ブラスト | 無料オンラインブロックパズルゲーム",
@@ -9,7 +23,7 @@
     "ogDescription": "ブロック ブラストを無料でオンラインプレイ！ブロックを合わせてライン消去、楽しいパズルゲームプレイで脳を鍛えよう。ダウンロード不要。",
     "ogTitle": "ブロック ブラスト - 無料オンラインブロックパズルゲーム",
     "twitterTitle": "ブロック ブラスト - 無料オンラインブロックパズルゲーム",
-    "siteName": "blockblastgame.net"
+    "siteName": "blockblastjp.com"
   },
   "features": {
     "title": "ブロック ブラストの魅力",
@@ -42,7 +56,7 @@
     "description": "ブロック ブラストの冒険を始める準備はOK？とっても簡単！この手順に従えば、あっという間にプロのようにブロックを合わせられるようになるよ！",
     "step1": {
       "title": "ゲームスタート",
-      "description": "blockblastgame.netにアクセスして「今すぐプレイ」をクリックすれば、すぐにブロック ブラストが楽しめる！ダウンロード不要、クリックするだけ！"
+      "description": "blockblastjp.comにアクセスして「今すぐプレイ」をクリックすれば、すぐにブロック ブラストが楽しめる！ダウンロード不要、クリックするだけ！"
     },
     "step2": {
       "title": "ブロックを合わせる",
@@ -86,7 +100,7 @@
     "description": "ブロック ブラストについて疑問がある？必要な答えはすべてここにあります！",
     "whatIs": {
       "question": "ブロック ブラストとは？",
-      "answer": "ブロック ブラストは、カラフルなブロックを合わせて消去する超楽しいパズルゲーム！blockblastgame.netでブラウザから無料でプレイできます。ちょっとした息抜きにも、長時間のゲームセッションにもぴったり。ブロック ブラストはリラックスしながら脳トレができる無料ゲームです！"
+      "answer": "ブロック ブラストは、カラフルなブロックを合わせて消去する超楽しいパズルゲーム！blockblastjp.comでブラウザから無料でプレイできます。ちょっとした息抜きにも、長時間のゲームセッションにもぴったり。ブロック ブラストはリラックスしながら脳トレができる無料ゲームです！"
     },
     "howToPlay": {
       "question": "ブロック ブラストの遊び方は？",
@@ -219,9 +233,12 @@
         "よくある質問についてFAQセクションをチェック",
         "YouTubeチャンネルでチュートリアル動画を見る",
         "SNSでコミュニティに参加",
-        "support@blockblastgame.netでサポートに連絡"
+        "support@blockblastjp.comでサポートに連絡"
       ]
     }
+  },
+  "banner": {
+    "alt": "ブロック ブラスト バナー - 無料でプレイ"
   },
   "gameControls": {
     "title": "ブロック ブラストの遊び方",
@@ -271,7 +288,7 @@
     "features": "機能",
     "partner": "パートナー",
     "followUs": "フォローする",
-    "copyright": "© {{year}} blockblastgame.net. All rights reserved.",
+    "copyright": "© {{year}} blockblastjp.com. All rights reserved.",
     "terms": "利用規約",
     "privacy": "プライバシーポリシー",
     "socialLinks": {

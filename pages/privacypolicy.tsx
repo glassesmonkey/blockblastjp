@@ -12,7 +12,7 @@ const PrivacyPolicy: NextPage = () => {
     <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
         <title>{t('meta.title')}</title>
-        <link rel="canonical" href="https://blockblastgame.net/privacypolicy" />
+        <link rel="canonical" href="https://blockblastjp.com/privacypolicy" />
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       

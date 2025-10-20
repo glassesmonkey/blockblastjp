@@ -40,7 +40,7 @@ export default function Header() {
     <header className='flex justify-between items-center w-full mt-5 border-b-2 pb-7 sm:px-4 px-2'>
       <Link href='/' className='flex space-x-2'>
         <Image
-          alt='block-blast logo'
+          alt={t('header.logo.alt')}
           src='/icons/logo.webp'
           className='sm:w-10 sm:h-10 w-7 h-7'
           width={20}

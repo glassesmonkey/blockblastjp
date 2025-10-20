@@ -17,7 +17,7 @@ const BlogListPage: NextPage<BlogListPageProps> = ({ posts }) => {
   const { t } = useTranslation('common');
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  const canonicalUrl = `https://blockblastgame.net/${locale === defaultLocale ? '' : `/${locale}`}/blog-post-list`;
+  const canonicalUrl = `https://blockblastjp.com/${locale === defaultLocale ? '' : `/${locale}`}/blog-post-list`;
 
   return (
     <div className='flex flex-col min-h-screen'>
@@ -30,10 +30,10 @@ const BlogListPage: NextPage<BlogListPageProps> = ({ posts }) => {
             key={l}
             rel="alternate"
             hrefLang={l}
-            href={`https://blockblastgame.net${l === defaultLocale ? '' : `/${l}`}/blog-post-list`}
+            href={`https://blockblastjp.com${l === defaultLocale ? '' : `/${l}`}/blog-post-list`}
           />
         ))}
-        <link rel="alternate" hrefLang="x-default" href="https://blockblastgame.net/blog-post-list" />
+        <link rel="alternate" hrefLang="x-default" href="https://blockblastjp.com/blog-post-list" />
       </Head>
 
       <Header />

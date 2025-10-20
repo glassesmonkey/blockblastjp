@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   const { t } = useTranslation('common-scratch');
   const router = useRouter();
   const { locale, locales, defaultLocale, pathname } = router;
-  const canonicalUrl = `https://blockblastgame.net${locale === defaultLocale ? '' : `/${locale}`}${pathname}`;
+  const canonicalUrl = `https://blockblastjp.com${locale === defaultLocale ? '' : `/${locale}`}${pathname}`;
   const [showGame, setShowGame] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 
         <title>{t('meta.title')}</title>
         <link rel="canonical" href={canonicalUrl} />
-        {/* <link rel="dns-prefetch" href="https://nos.blockblastgame.net"></link> */}
+        {/* <link rel="dns-prefetch" href="https://nos.blockblastjp.com"></link> */}
 
         {/* hreflang 标记 */}
         {locales?.map((l) => (
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             key={l}
             rel="alternate"
             hrefLang={l}
-            href={`https://blockblastgame.net${l === defaultLocale ? '' : `/${l}`}${pathname}`}
+            href={`https://blockblastjp.com${l === defaultLocale ? '' : `/${l}`}${pathname}`}
           />
         ))}
 
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         <link
           rel="alternate"
           hrefLang="x-default"
-          href={`https://blockblastgame.net${pathname}`}
+          href={`https://blockblastjp.com${pathname}`}
         />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -64,9 +64,9 @@ const Home: NextPage = () => {
               "@language": "ja",
               "@value": "ジオメトリーダッシュオンラインは、無料で遊ぶ音楽リズムアクションゲームです。音楽に合わせたスリリングなゲームプレイを体験し、自分だけのレベルを作成し、様々なゲームモードで自分に挑戦しましょう。"
             },
-            "url": "https://blockblastgame.net",
+            "url": "https://blockblastjp.com",
             "sameAs": [
-              "https://blockblastgame.net/ja"
+              "https://blockblastjp.com/ja"
             ],
             "offers": {
               "@type": "Offer",
@@ -155,7 +155,7 @@ const Home: NextPage = () => {
                   "@type": "Answer",
                   "text": {
                     "@language": "ja",
-                    "@value": "ブラウザ版（blockblastgame.net）では完全無料でプレイできます。インストール不要で、広告なしのスムーズな体験が可能です。その他、Lite版（基本機能のみ無料）や、全機能が使える有料版（モバイル約2ドル、PC約4ドル）もあります。"
+                    "@value": "ブラウザ版（blockblastjp.com）では完全無料でプレイできます。インストール不要で、広告なしのスムーズな体験が可能です。その他、Lite版（基本機能のみ無料）や、全機能が使える有料版（モバイル約2ドル、PC約4ドル）もあります。"
                   }
                 }
               },
@@ -273,7 +273,7 @@ const Home: NextPage = () => {
           {!showGame ? (
             <div className='absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 cursor-pointer'>
               <img
-                src="https://cdn.blockblastgame.net/scratch-ver.webp"
+                src="https://cdn.blockblastjp.com/scratch-ver.webp"
                 alt="Game Cover"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -286,7 +286,7 @@ const Home: NextPage = () => {
           ) : (
             <iframe
               ref={iframeRef}
-              src="https://cdn.blockblastgame.net/Geometry-Dash-scratch.html"
+              src="https://cdn.blockblastjp.com/Geometry-Dash-scratch.html"
               width="100%"
               height="100%"
               frameBorder="0"

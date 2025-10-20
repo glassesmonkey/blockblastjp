@@ -2,7 +2,7 @@ import { writeFileSync } from "fs";
 import { globby } from "globby";
 import prettier from "prettier";
 
-const BASE_URL = "https://blockblastgame.net";
+const BASE_URL = "https://blockblastjp.com";
 
 const DOMAIN_CONFIG = {
   ja: BASE_URL,

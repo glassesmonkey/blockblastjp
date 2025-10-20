@@ -48,7 +48,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
       />
 
       <div className="mt-12 text-center">
-        <Link href="https://blockblastgame.net" className="inline-block text-white font-semibold py-3 px-6 rounded-lg transition duration-300 gradient-button">
+        <Link href="https://blockblastjp.com" className="inline-block text-white font-semibold py-3 px-6 rounded-lg transition duration-300 gradient-button">
           play block blast now!
         </Link>
       </div>

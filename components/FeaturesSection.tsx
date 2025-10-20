@@ -4,7 +4,7 @@ import { Gamepad, Star, Trophy, Zap, Users } from 'lucide-react';
 const FeaturesSection = () => {
   const { t } = useTranslation('common');
   return (
-    <section className="mx-auto w-full max-w-7xl px-5 py-12 md:px-10 md:py-20">
+    <section id="features" className="mx-auto w-full max-w-7xl px-5 py-12 md:px-10 md:py-20">
       <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-20">
         <div className="flex flex-col items-center order-2 lg:order-1 lg:w-1/2">
           <h2 className="mb-6 text-3xl font-bold text-center md:mb-10 md:text-5xl lg:mb-12">
@@ -50,7 +50,7 @@ const FeaturesSection = () => {
         </div>
         <div className="flex justify-center items-center order-1 lg:order-2 lg:w-1/2">
           <img
-            src="https://cdn.blockblastgame.net/com.block.blast.adventure.blockpuzzle.freegame.master-53592a17-3d3e-48b7-aae9-0ebfe4d891c9.webp"
+            src="https://cdn.blockblastjp.com/com.block.blast.adventure.blockpuzzle.freegame.master-53592a17-3d3e-48b7-aae9-0ebfe4d891c9.webp"
             alt={t('features.mainImage.alt')}
             className="h-auto w-full max-w-md object-contain"
           />

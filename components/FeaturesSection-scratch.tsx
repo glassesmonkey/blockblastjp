@@ -50,7 +50,7 @@ const FeaturesSection = () => {
         </div>
         <div className="flex justify-center items-center order-1 lg:order-2 lg:w-1/2">
           <img
-            src="https://cdn.blockblastgame.net/new-world-record-93204.webp"
+            src="https://cdn.blockblastjp.com/new-world-record-93204.webp"
             alt={t('features.mainImage.alt')}
             className="h-auto w-full max-w-md object-contain"
           />

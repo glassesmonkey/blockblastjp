@@ -25,14 +25,14 @@ interface Post {
     return `<?xml version="1.0" encoding="UTF-8"?>
      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
        <url>
-         <loc>https://blockblastgame.net</loc>
+         <loc>https://blockblastjp.com</loc>
        </url>
 
        ${posts
          .map(({ slug }) => {
            return `
          <url>
-             <loc>${`https://blockblastgame.net/blog/${slug}`}</loc>
+             <loc>${`https://blockblastjp.com/blog/${slug}`}</loc>
          </url>
        `
          })

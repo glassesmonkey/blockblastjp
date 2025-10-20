@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
   const { locale, locales, defaultLocale, pathname } = router;
-  const canonicalUrl = `https://blockblastgame.net${locale === defaultLocale ? '' : `/${locale}`}${pathname}`;
+  const canonicalUrl = `https://blockblastjp.com${locale === defaultLocale ? '' : `/${locale}`}${pathname}`;
   const [showGame, setShowGame] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 
         <title>スクラッチアスレチック|ジオメトリーダッシュ</title>
         <link rel="canonical" href={canonicalUrl} />
-        {/* <link rel="dns-prefetch" href="https://nos.blockblastgame.net"></link> */}
+        {/* <link rel="dns-prefetch" href="https://nos.blockblastjp.com"></link> */}
 
         {/* hreflang 标记 */}
         {locales?.map((l) => (
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             key={l}
             rel="alternate"
             hrefLang={l}
-            href={`https://blockblastgame.net${l === defaultLocale ? '' : `/${l}`}${pathname}`}
+            href={`https://blockblastjp.com${l === defaultLocale ? '' : `/${l}`}${pathname}`}
           />
         ))}
 
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         <link
           rel="alternate"
           hrefLang="x-default"
-          href={`https://blockblastgame.net${pathname}`}
+          href={`https://blockblastjp.com${pathname}`}
         />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -154,7 +154,7 @@ const Home: NextPage = () => {
           ) : (
             <iframe
               ref={iframeRef}
-              src="https://cdn.blockblastgame.net/dash-jp-easy.html"
+              src="https://cdn.blockblastjp.com/dash-jp-easy.html"
               width="100%"
               height="100%"
               frameBorder="0"

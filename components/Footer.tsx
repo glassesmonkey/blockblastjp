@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="space-y-4">
-            <Link href="/" className="text-2xl font-bold">blockblastgame.net</Link>
+            <Link href="/" className="text-2xl font-bold">blockblastjp.com</Link>
             <p className="text-sm text-gray-600">
               {t('footer.description')}
             </p>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 {isIndexPage && (
                   <>
                                         <a href="https://blockblastsolver.online/" title="block blast solver" className="partner-link" rel="noopener noreferrer" target="_blank">block blast helper</a>
-                    <a href="https://blockblastgame.net" title="block blast game" className="partner-link" rel="noopener noreferrer" target="_blank">block blast game</a>
+                    <a href="https://blockblastjp.com" title="block blast game" className="partner-link" rel="noopener noreferrer" target="_blank">block blast game</a>
                     <a href="https://sprunkiphase3.online/" title="sprunki phase3 online game" className="partner-link" rel="noopener noreferrer" target="_blank">sprunki phase3 online</a>
                     <a href="https://sprunkiphase.club/" title="all sprunki phase game" className="partner-link" rel="noopener noreferrer" target="_blank">all sprunki phase game</a>
                     <a href="https://geometrydashjp.com/" title="geometry dash game" className="partner-link" rel="noopener noreferrer" target="_blank">geometrydashjp</a>

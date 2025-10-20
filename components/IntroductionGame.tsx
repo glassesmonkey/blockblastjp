@@ -4,11 +4,11 @@ const IntroductionGame = () => {
   const { t } = useTranslation('common');
 
   return (
-    <section className="w-full max-w-[768px] mt-6 sm:mt-8">
+    <section id="introduction" className="w-full max-w-[768px] mt-6 sm:mt-8">
       <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 sm:p-8 shadow-md">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-center">
           {t('introduction.title')}
-        </h1>
+        </h2>
         
         <p className="text-gray-700 mb-6 text-base sm:text-lg leading-relaxed">
           {t('introduction.description')}

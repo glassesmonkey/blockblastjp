@@ -5,7 +5,7 @@ const HowItWorksSection = () => {
   const { t } = useTranslation('common');
   
   return (
-    <section className="bg-gray-50 py-12 md:py-20">
+    <section id="how-it-works" className="bg-gray-50 py-12 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-10">
         <div className="mb-8 md:mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-5xl">
