@@ -195,7 +195,7 @@ const Home: NextPage = () => {
           <div className='flex-1 flex flex-col'>
             {/* 游戏iframe区域 - order-1确保视觉上在顶部 */}
             <div
-              className='relative w-full h-[320px] sm:h-[573px] border border-gray-300 rounded-lg shadow-lg overflow-hidden order-1'
+              className='relative w-full aspect-[9/16] sm:aspect-[16/9] sm:h-[573px] border border-gray-300 rounded-lg shadow-lg overflow-hidden order-1'
               onClick={() => setShowGame(true)}
             >
               {!showGame ? (
