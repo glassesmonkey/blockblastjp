@@ -13,7 +13,7 @@ import BlockBlastSolver from '../components/BlockBlastSolver';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { loadTranslations } from '../lib/loadTranslations';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import IntroductionGame from '../components/IntroductionGame';
 import QuickNavigation from '../components/QuickNavigation';
 
@@ -26,6 +26,54 @@ const Home: NextPage = () => {
   const [showGame, setShowGame] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
+  const gameContainerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasHovered, setHasHovered] = useState(false);
+
+  // 智能预加载逻辑
+  useEffect(() => {
+    // 使用 Intersection Observer 检测游戏区域是否可见
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (gameContainerRef.current) {
+      observer.observe(gameContainerRef.current);
+    }
+
+    return () => {
+      if (gameContainerRef.current) {
+        observer.unobserve(gameContainerRef.current);
+      }
+    };
+  }, []);
+
+  // 桌面端鼠标悬停预加载
+  const handleMouseEnter = () => {
+    if (showGame || hasHovered) return;
+
+    // 检测是否为桌面设备（窗口宽度 >= 1024px）
+    const isDesktop = window.innerWidth >= 1024;
+
+    if (isDesktop && isVisible) {
+      setHasHovered(true);
+
+      // 使用 requestIdleCallback 在浏览器空闲时预加载
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          setShowGame(true);
+        }, { timeout: 2000 });
+      } else {
+        // 降级方案：延迟 500ms
+        setTimeout(() => {
+          setShowGame(true);
+        }, 500);
+      }
+    }
+  };
 
 
   return (
@@ -195,8 +243,10 @@ const Home: NextPage = () => {
           <div className='flex-1 flex flex-col'>
             {/* 游戏iframe区域 - order-1确保视觉上在顶部 */}
             <div
-              className='relative w-full aspect-[9/16] sm:aspect-[16/9] sm:h-[573px] border border-gray-300 rounded-lg shadow-lg overflow-hidden order-1'
+              ref={gameContainerRef}
+              className='relative w-full aspect-[9/16] sm:aspect-[16/9] sm:h-[573px] border border-gray-300 rounded-lg shadow-lg overflow-hidden order-1 cursor-pointer'
               onClick={() => setShowGame(true)}
+              onMouseEnter={handleMouseEnter}
             >
               {!showGame ? (
                 <div className='absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 cursor-pointer'>
@@ -206,9 +256,9 @@ const Home: NextPage = () => {
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <button
-                    className='bg-blue-500 text-white font-medium px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-blue-400 transition duration-300 ease-in-out z-10 text-sm sm:text-base'
+                    className='bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:from-purple-700 hover:to-pink-700 hover:scale-105 transition-all duration-300 ease-in-out z-10 text-base sm:text-lg shadow-xl hover:shadow-2xl'
                   >
-                    Start Game
+                    Start Game 🚀
                   </button>
                 </div>
               ) : (
@@ -280,7 +330,7 @@ const Home: NextPage = () => {
 
       <IntroductionGame />
       {/* BlockBlastSolver 组件 */}
-      <div className="w-full mt-4 sm:mt-8">
+      <div id="block-blast-solver" className="w-full mt-4 sm:mt-8">
         <BlockBlastSolver />
       </div>
 
