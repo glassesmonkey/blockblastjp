@@ -147,11 +147,11 @@ export default function Header() {
           <Link href='/' className='border-r border-gray-300 pr-4 space-x-2 hover:text-blue-400 transition'>
             <span className='font-medium text-base'>{t('header.home')}</span>
           </Link>
-          <Link href='https://blockblastsolver.online' className='border-r border-gray-300 pr-4 space-x-2 hover:text-blue-400 transition'>
-            <span className='font-medium text-base'>Block Blast solver</span>
+          <Link href='/#block-blast-solver' className='border-r border-gray-300 pr-4 space-x-2 hover:text-blue-400 transition'>
+            <span className='font-medium text-base'>ブロックブラストソルバー</span>
           </Link>
           <Link href='/blog-post-list' className='border-r border-gray-300 pr-4 space-x-2 hover:text-blue-400 transition'>
-            <span className='font-medium text-base'>Blog</span>
+            <span className='font-medium text-base'>ブログ</span>
           </Link>
           {/* <Link href='/pricing' className='border-r border-gray-300 pr-4 space-x-2 hover:text-blue-400 transition'>
             <span className='font-medium text-base'>Pricing</span>
@@ -172,8 +172,11 @@ export default function Header() {
             <Link href='/' className='hover:text-blue-400 transition' onClick={toggleMobileMenu}>
               <span className='font-medium text-base'>{t('header.home')}</span>
             </Link>
+            <Link href='/#block-blast-solver' className='hover:text-blue-400 transition' onClick={toggleMobileMenu}>
+              <span className='font-medium text-base'>ブロックブラストソルバー</span>
+            </Link>
             <Link href='/blog-post-list' className='hover:text-blue-400 transition' onClick={toggleMobileMenu}>
-              <span className='font-medium text-base'>Blog</span>
+              <span className='font-medium text-base'>ブログ</span>
             </Link>
             {/* <Link href='/pricing' className='hover:text-blue-400 transition' onClick={toggleMobileMenu}>
               <span className='font-medium text-base'>Pricing</span>
@@ -187,7 +190,7 @@ export default function Header() {
 
             {/* Language Selector in Mobile Menu */}
             <div className="mt-4 border-t pt-4">
-              <h3 className="text-sm font-semibold text-gray-500 mb-2">Select Language</h3>
+              <h3 className="text-sm font-semibold text-gray-500 mb-2">言語を選択</h3>
               <div className="grid grid-cols-2 gap-2">
                 {languages.map((lang) => (
                   <button

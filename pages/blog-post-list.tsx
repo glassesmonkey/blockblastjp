@@ -22,8 +22,8 @@ const BlogListPage: NextPage<BlogListPageProps> = ({ posts }) => {
   return (
     <div className='flex flex-col min-h-screen'>
       <Head>
-        <title>Blog Post List - block blast </title>
-        <meta name='description' content="block blast blog post list." />
+        <title>ブログ投稿リスト - block blast </title>
+        <meta name='description' content="block blast ブログ投稿リスト。" />
         <link rel="canonical" href={canonicalUrl} />
         {locales?.map((l) => (
           <link
@@ -40,8 +40,8 @@ const BlogListPage: NextPage<BlogListPageProps> = ({ posts }) => {
 
       <main className='flex-grow'>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 className="text-3xl font-bold text-center mb-8">block blast Blog Post List</h1>
-          <p className="text-xl text-center text-gray-600 mb-12">All you need know about block blast</p>
+          <h1 className="text-3xl font-bold text-center mb-8">block blast ブログ投稿リスト</h1>
+          <p className="text-xl text-center text-gray-600 mb-12">block blastに関する知識をすべて提供</p>
           <BlogPostList posts={posts} />
         </div>
       </main>
