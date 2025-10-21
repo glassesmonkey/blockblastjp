@@ -19,14 +19,14 @@ export default function Header() {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const languages: Language[] = [
-     { code: 'en', name: 'English', shortName: 'EN' },
+     //{ code: 'en', name: 'English', shortName: 'EN' },
     // { code: 'es', name: 'Español', shortName: 'ES' },
     // { code: 'ar', name: 'العربية', shortName: 'AR' },
     // { code: 'fr', name: 'Français', shortName: 'FR' },
     // { code: 'pt-BR', name: 'Português', shortName: 'PT' },
     // { code: 'zh-Hant', name: '繁體中文', shortName: 'ZH' },
     // { code: 'de', name: 'Deutsch', shortName: 'DE' }, 
-//{ code: 'ja', name: '日本語', shortName: 'JA' },  // japan）
+{ code: 'ja', name: '日本語', shortName: 'JA' },  // japan）
 // { code: 'ko', name: '한국어', shortName: 'KO' },  //kran
 // { code: 'it', name: 'Italiano', shortName: 'IT' },  //italiy
   ];
