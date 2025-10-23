@@ -41,6 +41,8 @@ class MyDocument extends Document {
               `,
             }}
           />
+          {/* Custom Analytics */}
+          <script defer data-domain="blockblastjp.com" src="https://traffic.aisonggenerator.online/js/script.js"></script>
         </Head>
         <body>
           <Main />
